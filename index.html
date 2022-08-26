@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nitea Demo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./JavaScript/general.js"></script>
+        <script type="text/javascript" src="./JavaScript/categoriesAJAX.js"></script>
+        <script type="text/javascript" src="./JavaScript/productsAJAX.js"></script>
+        <script type="text/javascript" src="./JavaScript/productcategoriesAJAX.js"></script>
+    </head>
+    <body onload="showPage(1);showForms(1);getCategories();getProducts();getProductCategories(1);">
+        <div id="menu">
+            <h1>DEMO</h1>
+            <nav>
+                <ul>
+                    <li id="menu1" class="menuitem" onclick="showPage(1)"> Home </li>
+                    <li id="menu2" class="menuitem" onclick="showPage(2)"> Products </li>
+                    <li id="menu3" class="menuitem" onclick="showPage(3)"> Product administration </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="content">
+            <div id="page1" class="page">
+                <h2>Welcome to DEMO</h2>
+                <div id="intro" class="card">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad perferendis itaque dolorum voluptatibus reiciendis ipsa magnam. Optio quam labore rerum aliquam repudiandae fuga quia, delectus animi incidunt dolore ipsum quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatum voluptatem veritatis odit facere, minima aut pariatur sint voluptatibus ea, possimus repudiandae, expedita ab et officia similique totam necessitatibus unde?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam accusantium repellendus libero reprehenderit, quibusdam animi sapiente vel temporibus necessitatibus, harum fugiat deserunt beatae soluta officia repudiandae minus, nulla provident dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatibus est doloribus inventore quo modi! Atque sed distinctio doloribus veritatis delectus assumenda provident, ipsam nihil illo nulla repellendus! Cumque, eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sint molestiae at doloremque, recusandae magni excepturi delectus illo earum dolorum modi deserunt dolores est animi quidem! Quis natus libero vitae?</p>
+                </div>
+            </div>
+
+            <div id="page2" class="page">
+                <h2>Products</h2>
+                <div id="productCard" class="card"></div>
+            </div>
+    
+            <div id="page3" class="page">
+                <h2>Product administration</h2>
+                <div class="container">
+                    <div id="categories" class="card toprow">
+                        <div id="categoryBox"></div>
+                        <div class="formContainer formCol1">
+                            <label>
+                                <input type="text" name="addCategory" placeholder="category" />
+                            </label>
+                            <button onclick="addCategory()"> Add new category </button>
+                        </div>
+                    </div>
+                    <div id="prodCategories" class="card toprow">
+                        <div id="prodCatBox"></div>
+                        <div class="formCol1">
+                            <div>
+                                <div id="formCol2">
+                                    <div>
+                                        <label for="prodName2">
+                                            Select product:
+                                        </label>
+                                        <div>
+                                            <select name="prodName2" id="prodName2"></select>
+                                        </div>
+                                    </div>
+                                    <button onclick="addProductCategories(2);"> Add categories to product</button>
+                                </div>
+                            </div>
+                            <div>
+                                <fieldset>
+                                    <legend>Choose categories</legend>
+                                    <div id="categoryChecks2"></div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div id="products" class="card">
+                        <div id="productBox"></div>
+                        <div class="formContainer">
+                            <button id="addProdBtn" onclick="showForms(1);">Make new product</button>
+                            <div id="form1" class="form splitForm"> 
+                                <div class="formCol3">
+                                    <div class="formItem">
+                                        <label for="prodName1">Product name: </label>
+                                        <input type="text" name="prodName1" id="prodName1" placeholder="New Product" />
+                                    </div>
+                                    <div class="formItem">
+                                        <label for="addPrice">Price: </label>
+                                        <input type="number" name="addPrice" value="100" min="100.00" />
+                                    </div>
+                                    <div class="formItem">
+                                        <label for="addImage">Select an image:</label>
+                                        <input type="file" name="addImage" />
+                                    </div>
+                                    <button onclick="addProduct();"> Add product </button>
+                                </div>
+                                <div>
+                                    <fieldset>
+                                        <legend>Choose categories</legend>
+                                        <div id="categoryChecks1"></div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div id="form2" class="form splitForm">
+                                <div class="formCol3">
+                                    <div class="formItem">
+                                        <label for="updateProduct">Product name: </label>
+                                        <input type="text" name="updateProduct" disabled />
+                                    </div>
+                                    <div class="formItem">
+                                        <label for="updatePrice">Price: </label>
+                                        <input type="number" name="updatePrice" min="100.00" />
+                                    </div>
+                                    <div class="formItem">
+                                        <label for="updateImage">Select an image:</label>
+                                        <div>
+                                            <input type="file" name="updateImage" />
+                                        </div>
+                                        
+                                    </div>
+                                    <button onclick="updateProduct();"> Save changes </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

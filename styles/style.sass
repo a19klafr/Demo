@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap')
+    
+// --------------------------------------
+// CSS VARIABLES
+// --------------------------------------
+$primary-color: #92c1e2
+$primary-color-light: #c4f4ff
+$primary-color-dark: #6191b0
+$background-grey: #eeeeee
+$background-white: #ffffff
+$background-transparent: rgba(0,0,0,0)
+
+$gideon-roman: 'Gideon Roman', cursive
+
+// --------------------------------------
+// GENERAL CSS
+// --------------------------------------
+%shared-flex
+    display: flex
+    justify-content: space-evenly
+    
+body
+    display: flex
+    flex-wrap: nowrap
+    height: 100vh
+    margin: 0
+
+h1, h2
+    font-family:$gideon-roman
+    text-align: center
+
+#menu
+    background-color: $primary-color
+    display: inline-block
+    width: 250px
+
+#content
+    background-color: $background-grey
+    display: inline-block
+    width: 100%
+
+.page
+    height: 95%
+    margin: auto
+    width: 90%
+
+.card
+    background-color: $background-white
+    border-radius: 5px
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.9), -2px -4px 10px rgba(0,0,0,0.4)
+    padding: 10px
+
+// --------------------------------------
+// PAGE 1 CSS
+// --------------------------------------
+
+#intro
+    margin: auto
+    width: 80%
+
+// --------------------------------------
+// PAGE 2 CSS
+// --------------------------------------
+
+#productCard
+    height: 90%
+    margin: auto
+    overflow: auto
+    width: 80%
+
+.productCollection
+    display: flex
+    align-items: flex-start
+    border: 1px solid $primary-color-dark
+    height: 150px
+    margin: 35px auto
+    width: 80%
+
+.productImage
+    border: 1px solid $primary-color-dark
+    height: 100%
+    width: 250px
+
+.productItem
+    height: 100%
+    width: 100%
+
+.productTitle
+    font-family: $gideon-roman
+    font-size: 25px
+    margin: 15px 5%
+    text-decoration: underline
+
+.productInformation
+    display: flex
+    height: 59%
+    width: 100%
+
+.priceInformation
+    height: 100%
+    display: flex
+    font-size: 20px
+    justify-content: center
+    align-items: center
+    width: 40%
+
+.categoryInformation
+    display: inline-block
+    height: 100%
+    width: 59%
+
+.categoryList
+    border: 1px dashed $primary-color-dark
+    height: 70%
+
+
+// --------------------------------------
+// PAGE 3 CSS
+// --------------------------------------
+
+.container
+    @extend %shared-flex
+    align-content: flex-start
+    align-items: baseline
+    flex-wrap: nowrap
+    margin-bottom: 20px
+
+#products
+    height: 500px
+    width: 800px
+
+.toprow
+    height: 400px
+    width: 350px
+
+// --------------------------------------
+// FORM CSS
+// --------------------------------------
+
+.formContainer
+    margin-top: 20px
+
+.splitForm 
+    @extend %shared-flex
+    flex-wrap: nowrap
+    margin-top: 25px
+
+.formCol1
+    @extend %shared-flex
+
+#formCol2
+    @extend %shared-flex
+    height: 135px
+    justify-content: space-between
+    flex-direction: column
+
+.formCol3
+    @extend %shared-flex
+    flex-direction: column
+    width: 305px
+
+.formItem
+    margin-bottom: 10px
+
+fieldset
+    height: 115px
+    overflow: auto
+    width: 130px
+
+#productSelect
+    width: 100%
+
+#addProdBtn
+    margin-left: 5%
+
+// --------------------------------------
+// TABLE CSS
+// --------------------------------------
+
+#categoryBox
+    height: 345px
+    overflow: auto
+
+#prodCatBox
+    height: 270px
+    overflow: auto
+
+#productBox
+    height: 290px
+    overflow: auto
+
+table
+    border-collapse: collapse
+    margin: auto
+    width: 90%
+    tr:nth-child(even)
+        background-color: $background-white
+    tr:nth-child(odd)
+        background-color: $primary-color-light
+    tr:nth-child(1)
+        background-color: $primary-color
+    tr:nth-child(2)
+        background-color: $primary-color-dark
+    td
+        padding: 5px 10px 5px 10px
+
+.btnBox
+    width: 65px
+    button
+        background-color: $background-white
+        border: 0
